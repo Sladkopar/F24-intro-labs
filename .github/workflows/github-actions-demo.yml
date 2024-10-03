@@ -19,3 +19,9 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+      - name: Gather system information
+        run: |
+          echo "System Information:"
+          echo "Operating System: $(uname -a)"
+          echo "CPU Info: $(lscpu | grep 'Model name')"
+          echo "Memory Info: $(free -h)"
